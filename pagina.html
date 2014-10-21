@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html charset=utf-8" />
+	<title>Lab 2 Penca</title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	
+	<!-- <script type = "text/javascript" src = "jquery.js"> </script> -->
+	<script type="text/javascript" src="jquery.event.drag-2.0.js"></script>
+	<script type = "text/javascript"src = "socket.io.js"> </script>
+	<script type = "text/javascript"src = "Cliente.js"> </script>
+
+</head>
+
+<body onload = "inicio()" onunload = "fin()" >
+	
+	
+	</br> 
+		 
+	<div>
+		<input id = "boton_izq" type = "button" value = "Derecha" onClick = "MoverPieza(0)" > </input>
+			<br><br>
+		<input id = "boton_der" type = "button" value = "Izquierda" onClick = "MoverPieza(1)" > </input>
+			<br><br>
+		<input id = "boton_arr" type = "button" value = "Abajo" onClick = "MoverPieza(2)"> </input>
+			<br><br>
+		<input id = "boton_aba" type = "button" value = "Arriba" onClick = "MoverPieza(3)"> </input>
+			<br><br>			
+		</div>
+	</div>
+
+	<form id = "tablero"> </form>
+
+					
+</body>
+<!--<div class="col-md-6" style="background:#FFF9E6">-->

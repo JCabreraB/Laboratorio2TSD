@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html charset=utf-8" />
+	<title>Lab 2</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	
+	<!-- <script type = "text/javascript" src = "jquery.js"> </script> -->
+	<script type="text/javascript" src="jquery.event.drag-2.0.js"></script>
+	<script type = "text/javascript"src = "socket.io.js"> </script>
+	<script type = "text/javascript"src = "scripts.js"> </script>
+	<script type = "text/javascript"src = "pizarra.js"> </script>
+</head>
+
+<body onload = "salaPrincipal()" onunload = "cerrarCon()" >
+	<div class="container">
+
+		<div id= "main">
+			<div class="jumbotron" style="background:#8280FF">
+				<div class="row">
+					<div class="col-md-8">
+						<h2 id = "titulo"> SALA PRINCIPAL</h2>	
+					</div>
+					<div class="col-md-4">
+						<div>
+							<label for = "listaSalas">Sala actual: </label>
+							<select id = "listaSalas" onChange="cambiarSala()"></select> 
+							<br>
+							<input type = "text" id = "nombreSalaNueva" size = "10">
+							<input id = "crearRoom" type = "button" onClick = "agregarSala()" value = "Crear Room"> </input>
+							<br><br> 
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3" style="background:#E6E6FF">
+						<div>
+							<label for="cuadroConversacion"> Conversación: </label>
+							<br>
+							<textarea id = "cuadroConversacion"  rows="10" cols="25" readonly></textarea>
+							<br><br>
+						</div>
+
+						<div>
+							<label for = "cuadroChat"> Enviar mensaje: </label>
+							<br>
+							<textarea id = "cuadroChat" rows = "3" cols = "25"> </textarea>
+							<br>
+							<input id = "boton_enviar" type = "button" value = "Enviar" onClick = "enviarMensajeSala()"> </input>
+							<br><br>
+						</div>
+						
+						</div>
+						<input id = "boton_izq" type = "button" value = "0" onClick = "MoverPieza(0)" > </input>
+							<br><br>
+						<input id = "boton_der" type = "button" value = "1" onClick = "MoverPieza(1)" > </input>
+							<br><br>
+						<input id = "boton_arr" type = "button" value = "2" onClick = "MoverPieza(2)"> </input>
+							<br><br>
+						<input id = "boton_aba" type = "button" value = "3" onClick = "MoverPieza(3)"> </input>
+							<br><br>			
+						</div>
+					</div>
+
+					<div style="background:#FFF9E6">
+						<div id = "datosJuego">
+							<strong id = "estadoJuego"> En espera </strong> 
+							<br>
+							<strong id = "palabra"> </strong>
+							<br>
+							<strong id = "tiempoRestante"> </strong>
+							<br>
+						</div>
+
+						<div id = "datosEquipos">
+							<small> Equipo A: </small>
+							<small id = "jugador1A"> - </small>
+							<small> / </small>
+							<small id = "jugador2A"> - </small>
+							<small> - </small>
+							<small id = "puntosA"> 0 </small>
+							<small> ptos </small>
+							<br>
+							<small> Equipo B: </small>
+							<small id = "jugador1B"> - </small>
+							<small> / </small>
+							<small id = "jugador2B"> - </small>
+							<small> - </small>
+							<small id = "puntosB"> 0 </small>
+							<small> ptos </small>
+							<br><br>
+						</div>
+						<div id = "contenedorPizarra">
+							<article>  </article>
+						</div>
+					</div>
+					<div class="col-md-3" style="background:#E6E6FF">
+						<div>
+							<label for = "nombreUsuario"> Nombre: </label>
+							<br>
+							<input type = "text" id = "nombreUsuario" value = "ANÓNIMO" size = "18" onChange = "cambiarNombreUsuario()">
+							<br><br>
+						</div>
+
+						<div> 
+							<label for = "listaUsuarios"> Lista de usuarios: </label>
+							<br>
+							<textarea id = "listaUsuarios" rows = "10" cols = "17" readonly></textarea>
+							<br><br><br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!--<div class="col-md-6" style="background:#FFF9E6">-->
